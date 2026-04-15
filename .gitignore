@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Python (scripts folder)
+__pycache__/
+*.pyc
+.venv/
+venv/
