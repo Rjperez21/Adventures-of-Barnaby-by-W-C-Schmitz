@@ -49,7 +49,7 @@ html, body {
    ============================================= */
 
 .cover {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -451,10 +451,34 @@ blockquote {
    ============================================= */
 
 @media (max-width: 640px) {
+  /* Cover — let the frame size to content on narrow screens,
+     and use small-viewport height so iOS Safari's address bar
+     doesn't crop the bottom. */
+  .cover { padding: 1.25rem 0.9rem; }
+  .cover-frame {
+    width: 100%;
+    aspect-ratio: auto;
+    min-height: calc(100svh - 2.5rem);
+    padding: 0.65rem;
+  }
+  .cover-inner { padding: 2rem 1.1rem; gap: 0.5rem; }
+  .cover-series { font-size: 0.7rem; letter-spacing: 0.26em; }
+  .cover-name { font-size: clamp(1.15rem, 4.4vw, 1.4rem); }
+  .cover-title { font-size: clamp(2.4rem, 11vw, 3rem); line-height: 1.1; }
+  .cover-flourish { margin: 0.1rem 0 0.8rem; font-size: 0.8rem; letter-spacing: 0.4em; }
+  .cover-author { margin-top: 1.6rem; }
+  .cover-by { font-size: 0.85rem; }
+  .cover-author-name { font-size: 0.95rem; letter-spacing: 0.22em; }
+  .cover-dedication { margin-top: 0.9rem; font-size: 0.78rem; }
+  .scroll-cue { bottom: 1rem; font-size: 0.68rem; }
+
+  /* Interior */
   .scene { padding: 6vh 5vw 8vh; gap: 1.8rem; }
   .scene-image { border-width: 5px; }
   .dropcap { font-size: 3.2em; }
   blockquote { font-size: 1.05em; }
+  .scene-text { font-size: 1.05rem; line-height: 1.7; }
+  .dialogue { padding-left: 0.9rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
